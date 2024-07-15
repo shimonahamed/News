@@ -15,6 +15,9 @@ class FontendControllers extends Controller
     public function services(){
         return view('fontend.services');
     }
+    public function news(){
+        return view('fontend.news');
+    }
 
 
 }
