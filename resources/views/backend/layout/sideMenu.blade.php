@@ -265,7 +265,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Tables
+                            Category
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -282,6 +282,30 @@
                                 <p> Add Category </p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            News
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url('news/create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p> Add News </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('news')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>News List</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-header">EXAMPLES</li>

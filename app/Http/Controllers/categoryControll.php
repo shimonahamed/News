@@ -27,10 +27,13 @@ class categoryControll extends Controller
 
         $category->details = $request->details ;
         $category->status = 1 ;
+
         $category->save();
 
         return view('backend.category.addCategory');
     }
+
+
     public function eidt($id){
         // Retrieve category by id
         $data = categoryModel::where('id',$id)->first();

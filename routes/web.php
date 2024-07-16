@@ -37,8 +37,9 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->name('logout');
+    Route::get('/', [\App\Http\Controllers\DashboardControllers::class, 'dashboard'])->name('/');
+
 Route::get('/dashboard1',[App\Http\Controllers\DashboardControllers::class , 'dashboard1']);
-Route::get('/dashboard', [\App\Http\Controllers\DashboardControllers::class, 'dashboard'])->name('dashboard');
 Route::get('/dashboardtwo',[App\Http\Controllers\DashboardControllers::class , 'dashboardtwo']);
 
 Route::get('/addCategory',[App\Http\Controllers\categoryControll::class,'addCategory']);
@@ -47,6 +48,8 @@ Route::post('/saveCat', [\App\Http\Controllers\categoryControll::class, 'saveCat
 Route::get('/categroy/eidt/{id}', [\App\Http\Controllers\categoryControll::class, 'eidt']);
 Route::post('/update', [\App\Http\Controllers\categoryControll::class, 'update']);
 Route::get('/delete/{id}', [\App\Http\Controllers\categoryControll::class, 'delete']);
+
+Route::resource('news',App\Http\Controllers\NewsControllers::class);
 
 });
 

@@ -5,10 +5,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 text-left">
-                <h1 class="h5 mb-2 text-gray-800">Category List</h1>
+                <h1 class="h5 mb-2 text-gray-800">News List</h1>
             </div>
             <div class="col-md-6 text-right mb-2">
-                <a href="{{url('addCategory')}}" class="btn btn-primary">Add New</a>
+                <a href="{{url('news/create')}}" class="btn btn-primary">Add New</a>
             </div>
         </div>
         <div class="card shadow mb-4">
@@ -21,26 +21,35 @@
                         <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Name</th>
+                            <th>Title</th>
                             <th>Image</th>
+                            <th>date</th>
                             <th>Details</th>
-                            <th>Action</th>
+                            <th>Auth</th>
+
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $key => $value)
+                        @foreach($news as $key => $value)
                             <tr>
                                 <th>{{$key+1}}</th>
-                                <th>{{$value->categrory_name}}</th>
+                                <th>{{$value->title}}</th>
                                 <td><img src="{{$value->img}}" class="w-25 h-25" alt="Image"></td>
+                                <th>{{$value->date}}</th>
                                 <th>{{$value->details}}</th>
-                                <th>{{$value->status}}</th>
+                                <th>{{$value->user_name}}</th>
 
-                                <th><a href="{{url('categroy/eidt', $value->id)}}" class="btn btn-warning">Edit</a></th>
+                                <th><a href="{{url('', $value->id)}}" class="btn btn-warning">Edit</a></th>
                                 <th>
-                                    <a onclick="return confirm('Are you sure to delete?')" href="{{url('delete', $value->id)}} "class="btn btn-danger">Delete</a>
+{{--                                    <a onclick="return confirm('Are you sure to delete?')" href="{{route('news.destroy', $value->id)}} "class="btn btn-danger">Delete</a>--}}
+
+                                    <form action="{{ route('news.destroy', $value->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </th>
                             </tr>
                         @endforeach

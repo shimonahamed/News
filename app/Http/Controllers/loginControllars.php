@@ -20,7 +20,7 @@ class loginControllars extends Controller
         $login=Auth::attempt($credentials);
 
         if ($login){
-            return redirect('/dashboard');
+            return redirect('/');
         }else{
             Session::flash('failed','Login Failed');
             return redirect()->back();
