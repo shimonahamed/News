@@ -21,6 +21,12 @@ class categoryControll extends Controller
     }
 
     public function saveCat(Request $request){
+        $this->validate($request,[
+            'category_name'=>'required',
+            'img'=>'required',
+            'details'=>'required',
+        ]);
+
         $category = new categoryModel();
         $category->categrory_name = $request->category_name ;
         $category->img = $request->img ;
@@ -29,6 +35,7 @@ class categoryControll extends Controller
         $category->status = 1 ;
 
         $category->save();
+        Session::flash('success','SuccessFull Save');
 
         return view('backend.category.addCategory');
     }
@@ -64,7 +71,7 @@ class categoryControll extends Controller
 //
 //
 //    }
-    public function update(Request $request){
+    public function update(Request $request ,$id){
         // Validate incoming request data
         $request->validate([
             'id' => 'required', // Ensure id exists in category_models table

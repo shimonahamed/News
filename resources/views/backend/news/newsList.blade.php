@@ -19,7 +19,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>SL</th>
                             <th>Title</th>
                             <th>Image</th>
@@ -27,13 +27,13 @@
                             <th>Details</th>
                             <th>Auth</th>
 
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th >Action</th>
+
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($news as $key => $value)
-                            <tr>
+                            <tr class="text-center">
                                 <th>{{$key+1}}</th>
                                 <th>{{$value->title}}</th>
                                 <td><img src="{{$value->img}}" class="w-25 h-25" alt="Image"></td>
@@ -41,14 +41,15 @@
                                 <th>{{$value->details}}</th>
                                 <th>{{$value->user_name}}</th>
 
-                                <th><a href="{{url('', $value->id)}}" class="btn btn-warning">Edit</a></th>
-                                <th>
-{{--                                    <a onclick="return confirm('Are you sure to delete?')" href="{{route('news.destroy', $value->id)}} "class="btn btn-danger">Delete</a>--}}
+                                <th class="d-flex justify-content-around">
+                                    <a href="{{ route('news.show', $value->id) }}" class="btn btn-primary btn-sm">view</a>
+                                    <a href="{{ route('news.edit', $value->id) }}" class="btn btn-primary btn-sm">Edit</a>
+
 
                                     <form action="{{ route('news.destroy', $value->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" onclick="return confirm('Are you sure to del ete?')" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
                                 </th>
                             </tr>
