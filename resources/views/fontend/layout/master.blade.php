@@ -1,48 +1,40 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Restaurant One Page HTML5 Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS
-        ================================================ -->
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{asset('fontend/css/owl.carousel.css')}}">
-    <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{{asset('fontend/css/bootstrap.min.css')}}">
-    <!-- Font-awesome.min css -->
-    <link rel="stylesheet" href="{{asset('fontend/css/font-awesome.min.css')}}">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{asset('fontend/css/animate.min.css')}}">
+    <title>BizNews - Free News Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-    <link rel="stylesheet" href="{{asset('fontend/css/main.css')}}">
-    <!-- Responsive Stylesheet -->
-    <link rel="stylesheet" href="{{asset('fontend/css/responsive.css')}}">
-    <!-- Js -->
-    <script src="{{asset('fontend/js/vendor/modernizr-2.6.2.min.js')}}"></script>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')}}"></script> -->
-    <script>
-        window.jQuery || document.write('<script src="{{asset('fontend/js/vendor/jquery-1.10.2.min.js')}}"><\/script>')
-    </script>
-    <script src="{{asset('fontend/js/jquery.nav.js')}}"></script>
-    <script src="{{asset('fontend/js/jquery.sticky.js')}}"></script>
-    <script src="{{asset('fontend/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('fontend/js/plugins.js')}}"></script>
-    <script src="{{asset('fontend/js/wow.min.js')}}"></script>
-    <script src="{{asset('fontend/js/main.js')}}"></script>
+    <!-- Favicon -->
+    <link href="{{asset('fontend/img/favicon.ico')}}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{asset('fontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{asset('fontend/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
+<!-- Navbar Start -->
 @include('fontend.layout.header')
+<!-- Navbar End -->
 
 
-@yield('page')
 
 
 
+@yield('content')
 
 
 
@@ -59,8 +51,28 @@
 
 @include('fontend.layout.footer')
 
+<!-- Footer Start -->
+<div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
+    <p class="m-0 text-center">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.
+
+        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+        Design by <a href="https://htmlcodex.com">HTML Codex</a></p>
+</div>
+<!-- Footer End -->
 
 
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('fontend/lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('fontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('fontend/js/main.js')}}"></script>
 </body>
 
 </html>

@@ -1,110 +1,91 @@
-
-<section id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="block wow fadeInLeft" data-wow-delay="200ms">
-                    <h3>CONTACT <span>INFO</span></h3>
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <h4><i class="fa fa-phone"></i>Telefone</h4>
-                                <p>(000) 123 456 78- (000) 123 4567 89</p>
-
-                            </li>
-                            <li>
-                                <h4><i class="fa fa-map-marker"></i>Address</h4>
-                                <p>2046 Blue Spruce Lane Laurel Canada</p>
-                            </li>
-                            <li>
-                                <h4><i class="fa fa-envelope"></i>E mail</h4>
-                                <p>rest@gmail.com - rest@mail.ru</p>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
+    <div class="row py-4">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Get In Touch</h5>
+            <p class="font-weight-medium"><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+            <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+            <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+            <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6>
+            <div class="d-flex justify-content-start">
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square" href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <!-- .col-md-4 close -->
-            <div class="col-md-4">
-                <div class="block wow fadeInLeft" data-wow-delay="700ms">
-                    <h3>LATEST <span>BLOG POSTS</span></h3>
-                    <div class="blog">
-                        <ul>
-                            <li>
-                                <h4><a href="#">Nov 9-2014</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit
-                                    sapien</p>
-                            </li>
-                            <li>
-                                <h4><a href="#">Sep 8-2014</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit
-                                    sapien</p>
-                            </li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Popular News</h5>
+            <div class="mb-3">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                 </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
             </div>
-            <!-- .col-md-4 close -->
-            <div class="col-md-4">
-                <div class="block wow fadeInLeft" data-wow-delay="1100ms">
-                    <div class="gallary">
-                        <h3>PHOTO <span>STREAM</span></h3>
-                        <ul>
-                            <li>
-                                <a href="#"><img src="{{asset('fontend/images/photo/photo-1.jpg')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('fontend/images/photo/photo-2.jpg')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('fontend/images/photo/photo-3.jpg')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('fontend/images/photo/photo-4.jpg')}}" alt=""></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="social-media-link">
-                        <h3>Follow <span>US</span></h3>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-behance"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="mb-3">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                 </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
             </div>
-            <!-- .col-md-4 close -->
-        </div><!-- .row close -->
-    </div><!-- .containe close -->
-</section><!-- #footer close -->
-<footer id="footer-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="block">
-                    <p>Copyright &copy; 2014 - All Rights Reserved.Design and Developed By <a
-                                href="http://www.themefisher.com">Themefisher</a></p>
+            <div class="">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
+            <div class="m-n1">
+                <a href="" class="btn btn-sm btn-secondary m-1">Politics</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Corporate</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Health</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Education</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Science</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Foods</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Entertainment</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Travel</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Lifestyle</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Politics</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Corporate</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Health</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Education</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Science</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+                <a href="" class="btn btn-sm btn-secondary m-1">Foods</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-1.jpg')}}" alt=""></a>
+                </div>
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-2.jpg')}}" alt=""></a>
+                </div>
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-3.jpg')}}" alt=""></a>
+                </div>
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-4.jpg')}}" alt=""></a>
+                </div>
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-5.jpg')}}" alt=""></a>
+                </div>
+                <div class="col-4 mb-3">
+                    <a href=""><img class="w-100" src="{{asset('fontend/img/news-110x110-1.jpg')}}" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
-</footer>
+</div>

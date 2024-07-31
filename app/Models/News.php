@@ -14,4 +14,10 @@ class News extends Model
       'img',
       'details'
     ];
+    public function cat(){
+        return $this->belongsTo(categoryModel::class, 'category_id','id');
+    }
+    public function author(){
+        return $this->belongsTo(User::class,'create_by','id');
+    }
 }

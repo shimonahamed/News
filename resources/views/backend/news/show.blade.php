@@ -1,5 +1,5 @@
 @extends('backend.layout.master')
-@section('content')
+@section('show')
     <div class="content-wrapper pl-3" style="min-height: 1302.12px;">
 
         <div class="container-fluid">
@@ -21,7 +21,7 @@
         <p><strong>Created by:</strong> {{ $news->user_name }}</p>
         <p><strong>Date:</strong> {{ $news->date }}</p>
         <div>
-            <img class="w-50 h-50" src="{{$news->img }}" alt="{{ $news->title }}" />
+            <img class="w-25 h-25" src="{{env('STORAGE_PATH')}}/{{$news->img }}" alt="{{ $news->title }}" />
         </div>
         <div>
             <h3>Details:</h3>

@@ -34,12 +34,17 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->name('logout');
     Route::get('/', [\App\Http\Controllers\DashboardControllers::class, 'dashboard'])->name('/');
+
+
 //fontend
-    Route::get('/homepage',[App\Http\Controllers\FontendControllers::class,'homepage']);
-    Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'contact']);
-    Route::get('/services',[App\Http\Controllers\FontendControllers::class,'services']);
-    Route::get('/news',[App\Http\Controllers\FontendControllers::class,'news']);
+    Route::get('/homepage',[App\Http\Controllers\FontendControllers::class,'index']);
+    Route::get('/categories/{category_id}',[App\Http\Controllers\FontendControllers::class,'webcategory'])->name('wb.cat');
+    Route::get('/new/{news_id}',[App\Http\Controllers\FontendControllers::class,'newsDetails'])->name('wb.news');
+    Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'webcontact']);
+
+
 //dasbord
+
 Route::get('/dashboard1',[App\Http\Controllers\DashboardControllers::class , 'dashboard1']);
 Route::get('/dashboardtwo',[App\Http\Controllers\DashboardControllers::class , 'dashboardtwo']);
 

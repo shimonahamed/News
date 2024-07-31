@@ -1,5 +1,5 @@
 @extends('backend.layout.master')
-@section('content')
+@section('show')
     <div class="content-wrapper pl-3" style="min-height: 1302.12px;">
 
     <div class="container-fluid">
@@ -36,12 +36,12 @@
                             <tr class="text-center">
                                 <th>{{$key+1}}</th>
                                 <th>{{$value->title}}</th>
-                                <td><img src="{{$value->img}}" class="w-25 h-25" alt="Image"></td>
+                                <td><img src="{{env('STORAGE_PATH')}}/{{$value->img}}" class="w-25 h-25" alt="Image"></td>
                                 <th>{{$value->date}}</th>
                                 <th>{{$value->details}}</th>
                                 <th>{{$value->user_name}}</th>
 
-                                <th class="d-flex justify-content-around">
+                                <th class="d-flex justify-content-between">
                                     <a href="{{ route('news.show', $value->id) }}" class="btn btn-primary btn-sm">view</a>
                                     <a href="{{ route('news.edit', $value->id) }}" class="btn btn-primary btn-sm">Edit</a>
 

@@ -37,12 +37,19 @@ class NewsControllers extends Controller
             'img' => 'required',
             'details' => 'required',
         ]);
+        $imageName = '';
+        if ($image = $request->file('img')){
+            $imageName = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move(storage_path('uploads'), $imageName);
+        }
 
-        $input=$request->except('_token');
+        $input=$request->except('_token','img');
         $news=new News();
         $news->fill($input);
         $news->date=date('Y-m-d');
         $news->create_by=auth()->user()->id;
+        $news->img=$imageName;
+
         $news->save();
 
         return redirect()->back();
@@ -51,6 +58,7 @@ class NewsControllers extends Controller
 
     public function show($id)
     {
+
         $newsItem = News::join('users', 'news.create_by', '=', 'users.id')
             ->where('news.id', $id)
             ->select('news.*', 'users.name as user_name')
@@ -87,17 +95,25 @@ class NewsControllers extends Controller
     {
         $this->validate($request,[
             'title'=>'required',
-            'img'=>'required',
+            'category_id'=>'required',
             'details'=>'required',
         ]);
         $id=$request->input('id');
 
         $news=News::find($id);
         if ($news){
+            $imageName = null;
+            if ($image = $request->file('img')){
+                $imageName = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
+                $image->move(storage_path('uploads'), $imageName);
+            }
+
 
             $news->title=$request->input('title');
-            $news->img=$request->input('img');
+//            $news->img=$request->input('img');
             $news->details=$request->input('details');
+            $news->category_id=$request->input('category_id');
+            $news->img=$imageName ?? $news->img;
             $news->save();
 
             Session::flash('seccuss','Successfull Update');

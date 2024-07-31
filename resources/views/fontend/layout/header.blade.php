@@ -1,49 +1,33 @@
-<!--
-header-img start
-============================== -->
-<section id="hero-area">
-    <img class="img-responsive" src="{{asset('fontend/images/header.jpg')}}" alt="">
-</section>
-<!--
-Header start
-============================== -->
-<nav id="navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                        data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="#">
-                                    <img src="{{asset('fontend/images/logo.png ')}}" alt="Logo">
-                                </a>
-
-                            </div>
-
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav navbar-right" id="top-nav">
-                                    <li><a href="#hero-area">Home</a></li>
-                                    <li><a href="#about-us">about us</a></li>
-                                    <li><a href="#blog">Blog</a></li>
-                                    <li><a href="#price">menu</a></li>
-                                    <li><a href="#subscribe">news</a></li>
-                                    <li><a href="#contact-us">contacts</a></li>
-                                </ul>
-                            </div><!-- /.navbar-collapse -->
-                        </div><!-- /.container-fluid -->
-                    </nav>
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-white font-weight-normal">News</span></h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav mr-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="category.html" class="nav-item nav-link">Category</a>
+                <a href="single.html" class="nav-item nav-link">Single News</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="#" class="dropdown-item">Menu item 1</a>
+                        <a href="#" class="dropdown-item">Menu item 2</a>
+                        <a href="#" class="dropdown-item">Menu item 3</a>
+                    </div>
                 </div>
-            </div><!-- .col-md-12 close -->
-        </div><!-- .row close -->
-    </div><!-- .container close -->
-</nav><!-- header close -->
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                <input type="text" class="form-control border-0" placeholder="Keyword">
+                <div class="input-group-append">
+                    <button class="input-group-text bg-primary text-dark border-0 px-3"><i
+                                class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

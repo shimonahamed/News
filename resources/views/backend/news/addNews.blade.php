@@ -1,6 +1,6 @@
 
 @extends('backend.layout.master')
-@section('content')
+@section('show')
        <div class="content-wrapper pl-3" style="min-height: 1302.12px;">
 
             <div class="row pt-4">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form method="post" action="{{route('news.store')}}">
+                <form method="post" enctype="multipart/form-data" action="{{route('news.store')}}">
                     {{csrf_field()}}
 
                     <span class="text-success">{{Session::has('success') ? Session::get('success') : ''}}</span>
@@ -34,15 +34,16 @@
                         <input class="form-control" name="title">
                         <span class="text-danger">{{$errors->has('title') ? $errors->first('title') : ''}}</span>
                     </div>
-                    <div class="form-group">
-                        <label> Image</label>
-                        <input class="form-control" name="img">
-                        <span class="text-danger">{{$errors->has('img') ? $errors->first('img') : ''}}</span>
-                    </div>
+
                     <div class="form-group">
                         <label>Details</label>
                         <textarea class="form-control" name="details"></textarea>
                         <span class="text-danger">{{$errors->has('details') ? $errors->first('details') : ''}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label> Image</label>
+                        <input type="file" name="img">
+                        <span class="text-danger">{{$errors->has('img') ? $errors->first('img') : ''}}</span>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Submit</button>
