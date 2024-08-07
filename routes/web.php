@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardControllers;
+use App\Http\Controllers\categoryControll;
 use App\Http\Controllers\FontendControllers;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,7 @@ Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->n
     Route::get('/categories/{category_id}',[App\Http\Controllers\FontendControllers::class,'webcategory'])->name('wb.cat');
     Route::get('/new/{news_id}',[App\Http\Controllers\FontendControllers::class,'newsDetails'])->name('wb.news');
     Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'webcontact']);
+    Route::post('/commentStore',[App\Http\Controllers\commentController::class,'commentStore']);
 
 
 //dasbord

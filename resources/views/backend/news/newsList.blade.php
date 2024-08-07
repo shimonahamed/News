@@ -38,7 +38,7 @@
                                 <th>{{$value->title}}</th>
                                 <td><img src="{{env('STORAGE_PATH')}}/{{$value->img}}" class="w-25 h-25" alt="Image"></td>
                                 <th>{{$value->date}}</th>
-                                <th>{{$value->details}}</th>
+                                <th>{{substr_replace($value->details, "...", 50)}}</th>
                                 <th>{{$value->user_name}}</th>
 
                                 <th class="d-flex justify-content-between">

@@ -23,15 +23,15 @@ class categoryControll extends Controller
     public function saveCat(Request $request){
         $this->validate($request,[
             'category_name'=>'required',
-            'img'=>'required',
-            'details'=>'required',
+//            'img'=>'required',
+//            'details'=>'required',
         ]);
 
         $category = new categoryModel();
         $category->categrory_name = $request->category_name ;
-        $category->img = $request->img ;
-
-        $category->details = $request->details ;
+//        $category->img = $request->img ;
+//
+//        $category->details = $request->details ;
         $category->status = 1 ;
 
         $category->save();
@@ -49,35 +49,14 @@ class categoryControll extends Controller
         return view('backend.category.eidtCategory', $data);
     }
 
-//    public function update(Request $request){
-//        $category = categoryModel::where('id', '$id')->first();
-//        if ($category){
-//            $id = request()->input('id');
-//
-//            $category = new categoryModel();
-//            $category -> categrory_name = $request->input('category_name');
-//            $category->img = $request->input('img') ;
-//            $category->details = $request->input('details')  ;
-//
-//            $category->save();
-//
-//            Session::flash('success','SuccessFull Update');
-//
-//            return redirect()->back();
-//
-//        }
-//
-//        return redirect()->back();
-//
-//
-//    }
-    public function update(Request $request ,$id){
+    public function update(Request $request ){
+
         // Validate incoming request data
         $request->validate([
             'id' => 'required', // Ensure id exists in category_models table
             'category_name' => 'required',
-            'img' => 'required',
-            'details' => 'required',
+//            'img' => 'required',
+//            'details' => 'required',
         ]);
 
         // Retrieve category by id
@@ -87,8 +66,8 @@ class categoryControll extends Controller
         if ($category){
             // Update category attributes
             $category->categrory_name = $request->input('category_name');
-            $category->img = $request->input('img');
-            $category->details = $request->input('details');
+//            $category->img = $request->input('img');
+//            $category->details = $request->input('details');
 
             $category->save(); // Save the updated category
 

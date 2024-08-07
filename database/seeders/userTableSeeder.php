@@ -26,6 +26,11 @@ class userTableSeeder extends Seeder
                 'name'=> ' Admin',
                 'email'=> 'admin@gmail.com',
                 'password'=> Hash::make('123456'),
+            ],
+            [
+                'name'=> ' Jibon Ahamed',
+                'email'=> 'jibon@gmail.com',
+                'password'=> Hash::make('123456'),
             ]
         ];
         User::truncate();

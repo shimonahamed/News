@@ -11,7 +11,7 @@
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                               href="{{route('wb.cat',@$slide->cat->id)}}">{{@$slide->cat->categrory_name}}</a>
+                               href="{{route('wb.cat',@$slide->category->id)}}">{{@$slide->category->categrory_name}}</a>
                             <a class="text-white" href="">{{date('M d, Y', strtotime($slide->date))}}</a>
                         </div>
                         <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">{{$slide->title}}</a>
@@ -36,7 +36,7 @@
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                   href="{{route('wb.cat',@$new->cat->id)}}">{{@$new->cat->categrory_name}}</a>
+                                   href="{{route('wb.cat',@$new->category->id)}}">{{@$new->category->categrory_name}}</a>
                                 <a class="text-white" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                             </div>
                             <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{$new->title}}</a>
@@ -76,67 +76,28 @@
 
 
 <!-- Featured News Slider Start -->
+
+
 <div class="container-fluid pt-5 mb-3">
     <div class="container">
         <div class="section-title">
             <h4 class="m-0 text-uppercase font-weight-bold">Featured News</h4>
         </div>
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+            @foreach($FeaturedNews as $fnews)
+
             <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{asset('fontend/img/news-700x435-1.jpg')}}" style="object-fit: cover;">
+                <img class="img-fluid h-100" src="{{env('STORAGE_PATH')}}/{{$fnews->img}}" style="object-fit: cover;">
                 <div class="overlay">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="">Business</a>
-                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                           href="{{route('wb.cat',@$fnews->category->id)}}">{{@$fnews->category->categrory_name}}</a>
+                        <a class="text-white" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                     </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{$new->title}}</a>
                 </div>
             </div>
-            <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{asset('fontend/img/news-700x435-2.jpg')}}" style="object-fit: cover;">
-                <div class="overlay">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="">Business</a>
-                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                </div>
-            </div>
-            <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{asset('fontend/img/news-700x435-3.jpg')}}" style="object-fit: cover;">
-                <div class="overlay">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="">Business</a>
-                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                </div>
-            </div>
-            <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{asset('fontend/img/news-700x435-4.jpg')}}" style="object-fit: cover;">
-                <div class="overlay">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="">Business</a>
-                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                </div>
-            </div>
-            <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{asset('fontend/img/news-700x435-5.jpg')}}" style="object-fit: cover;">
-                <div class="overlay">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="">Business</a>
-                        <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                </div>
-            </div>
+                @endforeach
         </div>
     </div>
 </div>

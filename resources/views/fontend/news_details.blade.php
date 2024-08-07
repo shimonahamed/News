@@ -1,3 +1,7 @@
+<?php
+use App\Models\comment;
+?>
+
 @extends('fontend.layout.master')
 @section('content')
     <div class="container-fluid mt-5 mb-3 pt-3">
@@ -26,7 +30,7 @@
                         <img class="img-fluid w-100" src="{{env('STORAGE_PATH')}}/{{$news->img}}"  style="object-fit: cover;">
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{@$news->category->category_name}}</a>
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{@$news->category->categrory_name}}</a>
                                 <a class="text-body" href="">{{date('M d, Y', strtotime($news->date))}}</a>
                             </div>
                             <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{$news->title}}</h1>
@@ -50,36 +54,31 @@
                     <!-- Comment List Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">3 Comments</h4>
+{{--                            @foreach($comment as $value)--}}
+{{--                            @php--}}
+{{--                            $commentcount= App\Models\comment::commentcount($value->id);--}}
+
+{{--                            @endphp--}}
+
+{{--                            <h4 class="m-0 text-uppercase font-weight-bold">({{$commentcount}})</h4>--}}
+{{--                            @endforeach--}}
+
                         </div>
                         <div class="bg-white border border-top-0 p-4">
                             <div class="media mb-4">
-                                <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+
                                 <div class="media-body">
-                                    <h6><a class="text-secondary font-weight-bold" href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                    <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                        accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
-                                    <button class="btn btn-sm btn-outline-secondary">Reply</button>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                <div class="media-body">
-                                    <h6><a class="text-secondary font-weight-bold" href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                    <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                        accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
-                                    <button class="btn btn-sm btn-outline-secondary">Reply</button>
-                                    <div class="media mt-4">
-                                        <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                        <div class="media-body">
-                                            <h6><a class="text-secondary font-weight-bold" href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor
-                                                labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed
-                                                eirmod ipsum.</p>
-                                            <button class="btn btn-sm btn-outline-secondary">Reply</button>
+                                    @foreach($comment as $value)
+                                        <div class="d-flex">
+                                            <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <h6><a class="text-secondary font-weight-bold" href="">{{$value->name}}</a> <small><i>{{date('M d, Y', strtotime($value->date))}}</i></small></h6>
                                         </div>
-                                    </div>
+
+                                    <p>{{$value->message}}</p>
+                                    <button class="btn btn-sm btn-outline-secondary ">Reply</button>
+                                    @endforeach
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -91,32 +90,41 @@
                             <h4 class="m-0 text-uppercase font-weight-bold">Leave a comment</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
-                            <form>
+                            <form method="post" action="{{url('commentStore')}}">
+                                {{@csrf_field()}}
                                 <div class="form-row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="name">Name *</label>
-                                            <input type="text" class="form-control" id="name">
+                                            <label >Name *</label>
+                                            <input type="text" class="form-control" name="name">
+                                            <span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ''}}</span>
+
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="email">Email *</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <label >Email *</label>
+                                            <input type="email" class="form-control" name="email">
+                                            <span class="text-danger">{{$errors->has('email') ? $errors->first('email') : ''}}</span>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="website">Website</label>
-                                    <input type="url" class="form-control" id="website">
+                                    <label>Website</label>
+                                    <input type="url" class="form-control" name="website">
+                                    <span class="text-danger">{{$errors->has('website') ? $errors->first('website') : ''}}</span>
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="message">Message *</label>
-                                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                    <label>Message *</label>
+                                    <textarea name="message" cols="30" rows="5" class="form-control"></textarea>
+                                    <span class="text-danger">{{$errors->has('message') ? $errors->first('message') : ''}}</span>
+
                                 </div>
                                 <div class="form-group mb-0">
-                                    <input type="submit" value="Leave a comment" class="btn btn-primary font-weight-semi-bold py-2 px-3">
+                                    <button type="submit" class="btn btn-primary font-weight-semi-bold py-2 px-3">Leave a comment</button>
                                 </div>
                             </form>
                         </div>

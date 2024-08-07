@@ -22,8 +22,8 @@
                         <tr>
                             <th>SL</th>
                             <th>Name</th>
-                            <th>Image</th>
-                            <th>Details</th>
+{{--                            <th>Image</th>--}}
+{{--                            <th>Details</th>--}}
                             <th>Action</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -34,8 +34,8 @@
                             <tr>
                                 <th>{{$key+1}}</th>
                                 <th>{{$value->categrory_name}}</th>
-                                <td><img src="{{$value->img}}" class="w-25 h-25" alt="Image"></td>
-                                <th>{{$value->details}}</th>
+{{--                                <td><img src="{{$value->img}}" class="w-25 h-25" alt="Image"></td>--}}
+{{--                                <th>{{$value->details}}</th>--}}
                                 <th>{{$value->status}}</th>
 
                                 <th><a href="{{url('categroy/eidt', $value->id)}}" class="btn btn-warning">Edit</a></th>

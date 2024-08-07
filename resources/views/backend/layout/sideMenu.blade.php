@@ -276,12 +276,6 @@
                                 <p>Category List</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{url('addCategory')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p> Add Category </p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -293,12 +287,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url('news/create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p> Add News </p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="{{url('news')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
