@@ -35,7 +35,7 @@ use App\Models\comment;
                             </div>
                             <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{$news->title}}</h1>
                             <p>
-                                {{$news->details}}
+                                {!! $news->details !!}
                             </p>
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -44,7 +44,7 @@ use App\Models\comment;
                                 <span>{{@$news->author->name}}</span>
                             </div>
                             <div class="d-flex align-items-center">
-                                <span class="ml-3"><i class="far fa-eye mr-2"></i>12345</span>
+                                <span class="ml-3"><i class="far fa-eye mr-2"></i>{{$news->view_count}}</span>
                                 <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span>
                             </div>
                         </div>
@@ -90,43 +90,38 @@ use App\Models\comment;
                             <h4 class="m-0 text-uppercase font-weight-bold">Leave a comment</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
-                            <form method="post" action="{{url('commentStore')}}">
+                            @if(auth()->guard('visitor')->check())
+                            <form id="commentForm" action="{{route('comment.store')}}">
                                 {{@csrf_field()}}
                                 <div class="form-row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label >Name *</label>
-                                            <input type="text" class="form-control" name="name">
-                                            <span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ''}}</span>
+                                            <input type="text" class="form-control" id="name" value="{{auth()->guard('visitor')->user()->name}}">
 
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label >Email *</label>
-                                            <input type="email" class="form-control" name="email">
-                                            <span class="text-danger">{{$errors->has('email') ? $errors->first('email') : ''}}</span>
+                                            <input type="email" class="form-control" id="email" value="{{auth()->guard('visitor')->user()->email}}">
 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Website</label>
-                                    <input type="url" class="form-control" name="website">
-                                    <span class="text-danger">{{$errors->has('website') ? $errors->first('website') : ''}}</span>
-
-                                </div>
 
                                 <div class="form-group">
                                     <label>Message *</label>
-                                    <textarea name="message" cols="30" rows="5" class="form-control"></textarea>
-                                    <span class="text-danger">{{$errors->has('message') ? $errors->first('message') : ''}}</span>
+                                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
 
                                 </div>
                                 <div class="form-group mb-0">
                                     <button type="submit" class="btn btn-primary font-weight-semi-bold py-2 px-3">Leave a comment</button>
                                 </div>
                             </form>
+                            @else
+                                <a href="{{route('comment.index')}}?url={{request()->fullUrl()}}" class="btn btn-primary">Login</a>
+                            @endif
                         </div>
                     </div>
                     <!-- Comment Form End -->
@@ -281,4 +276,32 @@ use App\Models\comment;
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $('#commentForm').on('submit', function(e) {
+            e.preventDefault();
+            let reqObject={
+                name:$('#name').val(),
+                email:$('#email').val(),
+                message:$('#message').val(),
+                _token:'{{csrf_field()}}'
+            };
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: reqObject,
+                success: function(res){
+                    if(parseInt(res.status) === 2000){
+                        $('#showMessage').text(res.message);
+                    }else{
+                        alert(res.message);
+                    }
+                },
+                error : function (dsdsd){
+                    console.log(dsdsd);
+                }
+            });
+        });
+    </script>
 @endsection

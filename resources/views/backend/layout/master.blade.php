@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/plugins/daterangepicker/daterangepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.min.css')}}">
+    @yield('header')
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -77,7 +78,7 @@
 <script src="{{asset('backend/dist/js/demo.js')}}"></script>
 <script src="{{asset('backend/dist/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('backend/dist/js/pages/dashboard3.js')}}"></script>
-
+@yield('script')
 
 </body>
 </html>

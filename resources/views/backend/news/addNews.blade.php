@@ -1,5 +1,9 @@
 
 @extends('backend.layout.master')
+@section('header')
+    <link href="{{asset('backend/plugin/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+
+@endsection
 @section('show')
        <div class="content-wrapper pl-3" style="min-height: 1302.12px;">
 
@@ -19,11 +23,10 @@
 
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="form-control" name="category_id">
+                        <select class="form-control category_select" name="category_id">
                             <option value="">Select</option>
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category -> categrory_name}}</option>
-
                             @endforeach
                         </select>
 
@@ -37,7 +40,7 @@
 
                     <div class="form-group">
                         <label>Details</label>
-                        <textarea class="form-control" name="details"></textarea>
+                        <textarea class="form-control" id="mytextarea" name="details"></textarea>
                         <span class="text-danger">{{$errors->has('details') ? $errors->first('details') : ''}}</span>
                     </div>
                     <div class="form-group">
@@ -51,4 +54,23 @@
                 </form>
             </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="{{asset('backend/plugin/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('backend/plugin/select2/dist/js/select2.min.js')}}"></script>
+
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            menubar:false,
+            statusbar: false,
+            plugins: "powerpaste advcode searchreplace autolink directionality code visualblocks visualchars image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker editimage help formatpainter permanentpen charmap linkchecker emoticons advtable export autosave",
+            toolbar: "undo redo print spellcheckdialog formatpainter | blocks fontfamily fontsize | bold italic underline forecolor backcolor | link image | alignleft aligncenter alignright alignjustify lineheight | checklist bullist numlist indent outdent | removeformat | code",
+            height: "700px",
+        });
+    </script>
+    <script>
+        $('.category_select').select2();
+    </script>
 @endsection

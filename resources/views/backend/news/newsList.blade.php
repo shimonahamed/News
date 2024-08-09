@@ -38,7 +38,7 @@
                                 <th>{{$value->title}}</th>
                                 <td><img src="{{env('STORAGE_PATH')}}/{{$value->img}}" class="w-25 h-25" alt="Image"></td>
                                 <th>{{$value->date}}</th>
-                                <th>{{substr_replace($value->details, "...", 50)}}</th>
+                                <th>{{Str::limit(strip_tags($value->details), 80, '...') }}</th>
                                 <th>{{$value->user_name}}</th>
 
                                 <th class="d-flex justify-content-between">

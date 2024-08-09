@@ -17,7 +17,7 @@ class NewsControllers extends Controller
     public function index()
     {
 
-        $data['news'] = News::join('users','news.create_by','=','users.id')->select('news.*','users.name as user_name')->get();
+        $data['news'] = News::join('users','news.create_by','=','users.id')->select('news.*','users.name as user_name')->orderBy('id','DESC')->get();
        return view('backend.news.newsList',$data);
     }
 
@@ -49,6 +49,7 @@ class NewsControllers extends Controller
         $news->date=date('Y-m-d');
         $news->create_by=auth()->user()->id;
         $news->img=$imageName;
+        $news->view_count=1;
 
         $news->save();
 
