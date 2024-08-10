@@ -33,20 +33,7 @@
 
 
 
-
 @yield('content')
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @include('fontend.layout.footer')

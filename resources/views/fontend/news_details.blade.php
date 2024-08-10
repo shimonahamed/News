@@ -1,6 +1,4 @@
-<?php
-use App\Models\comment;
-?>
+
 
 @extends('fontend.layout.master')
 @section('content')
@@ -15,7 +13,27 @@ use App\Models\comment;
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center bg-white border border-left-0 owl-loaded owl-drag" style="width: calc(100% - 180px); padding-right: 100px;">
 
 
-                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1686px, 0px, 0px); transition: all 2s ease 0s; width: 5058px;"><div class="owl-item cloned" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div><div class="owl-item cloned" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div><div class="owl-item active" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div><div class="owl-item" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div><div class="owl-item cloned" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div><div class="owl-item cloned" style="width: 843px;"><div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="fa fa-angle-left"></i></div><div class="owl-next"><i class="fa fa-angle-right"></i></div></div><div class="owl-dots disabled"></div></div>
+                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1686px, 0px, 0px); transition: all 2s ease 0s; width: 5058px;">
+                                    <div class="owl-item cloned" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div>
+                                    <div class="owl-item cloned" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div>
+                                    <div class="owl-item active" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div>
+                                    <div class="owl-item" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div>
+                                    <div class="owl-item cloned" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div>
+                                    <div class="owl-item cloned" style="width: 843px;">
+                                        <div class="text-truncate">
+                                            <a class="text-secondary text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div></div></div></div>
+                            <div class="owl-nav"><div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                <div class="owl-next"><i class="fa fa-angle-right"></i></div></div><div class="owl-dots disabled"></div></div>
                     </div>
                 </div>
             </div>
@@ -45,7 +63,7 @@ use App\Models\comment;
                             </div>
                             <div class="d-flex align-items-center">
                                 <span class="ml-3"><i class="far fa-eye mr-2"></i>{{$news->view_count}}</span>
-                                <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span>
+                                <span class="ml-3"><i class="far fa-comment mr-2"></i>{{count($comments)}}</span>
                             </div>
                         </div>
                     </div>
@@ -54,76 +72,64 @@ use App\Models\comment;
                     <!-- Comment List Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-{{--                            @foreach($comment as $value)--}}
-{{--                            @php--}}
-{{--                            $commentcount= App\Models\comment::commentcount($value->id);--}}
-
-{{--                            @endphp--}}
-
-{{--                            <h4 class="m-0 text-uppercase font-weight-bold">({{$commentcount}})</h4>--}}
-{{--                            @endforeach--}}
+                                <h4 class="m-0 text-uppercase font-weight-bold">{{count($comments)}} Comments</h4>
 
                         </div>
                         <div class="bg-white border border-top-0 p-4">
-                            <div class="media mb-4">
-
-                                <div class="media-body">
-                                    @foreach($comment as $value)
-                                        <div class="d-flex">
-                                            <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                            <h6><a class="text-secondary font-weight-bold" href="">{{$value->name}}</a> <small><i>{{date('M d, Y', strtotime($value->date))}}</i></small></h6>
-                                        </div>
-
-                                    <p>{{$value->message}}</p>
-                                    <button class="btn btn-sm btn-outline-secondary ">Reply</button>
-                                    @endforeach
+                            @foreach($comments as $comment)
+                                <div class="media mb-4">
+                                    <img src="{{asset('fontend/img/user.jpg')}}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                    <div class="media-body">
+                                        <h6><a class="text-secondary font-weight-bold" href="">{{@$comment->visitor->name}}</a> <small><i>{{date('M d, Y', strtotime($comment->created_at))}}</i></small></h6>
+                                        {{@$comment->comment}}
+                                    </div>
                                 </div>
-
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- Comment List End -->
 
                     <!-- Comment Form Start -->
+                    <section id="commentSection">
                     <div class="mb-3">
+
                         <div class="section-title mb-0">
                             <h4 class="m-0 text-uppercase font-weight-bold">Leave a comment</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
                             @if(auth()->guard('visitor')->check())
-                            <form id="commentForm" action="{{route('comment.store')}}">
-                                {{@csrf_field()}}
-                                <div class="form-row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label >Name *</label>
-                                            <input type="text" class="form-control" id="name" value="{{auth()->guard('visitor')->user()->name}}">
-
+                                <form id="commentForm" action="{{route('comment.store')}}">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <span class="text-success" id="showMessage"></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="name">Name *</label>
+                                                <input readonly type="text" class="form-control" id="name" value="{{auth()->guard('visitor')->user()->name}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="email">Email *</label>
+                                                <input readonly type="email" class="form-control" id="email" value="{{auth()->guard('visitor')->user()->email}}">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label >Email *</label>
-                                            <input type="email" class="form-control" id="email" value="{{auth()->guard('visitor')->user()->email}}">
-
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="message">Message *</label>
+                                        <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Message *</label>
-                                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-
-                                </div>
-                                <div class="form-group mb-0">
-                                    <button type="submit" class="btn btn-primary font-weight-semi-bold py-2 px-3">Leave a comment</button>
-                                </div>
-                            </form>
+                                    <div class="form-group mb-0">
+                                        <input type="submit" value="Leave a comment" class="btn btn-primary font-weight-semi-bold py-2 px-3">
+                                    </div>
+                                </form>
                             @else
                                 <a href="{{route('comment.index')}}?url={{request()->fullUrl()}}" class="btn btn-primary">Login</a>
                             @endif
                         </div>
                     </div>
+                    </section>
                     <!-- Comment Form End -->
                 </div>
 
@@ -285,13 +291,15 @@ use App\Models\comment;
                 name:$('#name').val(),
                 email:$('#email').val(),
                 message:$('#message').val(),
-                _token:'{{csrf_field()}}'
+                _token:'{{csrf_token()}}',
+                title:'{{$news->id}}'
             };
             $.ajax({
                 type: "POST",
                 url: $(this).attr('action'),
                 data: reqObject,
                 success: function(res){
+                    console.log(res)
                     if(parseInt(res.status) === 2000){
                         $('#showMessage').text(res.message);
                     }else{

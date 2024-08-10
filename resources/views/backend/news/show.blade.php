@@ -25,7 +25,7 @@
         </div>
         <div>
             <h3>Details:</h3>
-            <p>{{ $news->details }}</p>
+            <p>{{ Str::limit(strip_tags($news->details), 200, '...') }}</p>
         </div>
         <a href="{{ route('news.index') }}" class="btn btn-primary">Back to News List</a>
 

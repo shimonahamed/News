@@ -76,7 +76,7 @@
             <!-- /.social-auth-links -->
 
             <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
+                <a href="">I forgot my password</a>
             </p>
             <p class="mb-0">
                 <a class="small" href="{{route('comment.create')}}?url={{isset($url) ? $url : ''}}">Create an Account!</a>
