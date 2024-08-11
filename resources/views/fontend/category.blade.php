@@ -40,7 +40,6 @@
                     @foreach($categories as $category)
                         <a href="{{ route('wb.cat', @$category->id) }}" class="nav-item nav-link">{{@$category->categrory_name }}</a>
                     @endforeach
-
                 </div>
 
                 </div>
@@ -87,12 +86,13 @@
                             </div>
                         @endforeach
                     </div>
+
                 </div>
+
+
             </div>
-            <div class="row">
-                <div class="col-12">
-{{--                    {{ $news->links() }}--}}
-                </div>
+            <div class="d-flex  justify-content-center">
+                {{ $news->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

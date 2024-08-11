@@ -13,6 +13,9 @@ class FontendControllers extends Controller
 {
     public function index(){
         $data['slider']=News::with('category:categrory_name,id')->take(3)->skip(0)->orderBy('id','DESC')->get();
+        $data['tags']=News::orderBy('id','DESC')->get();
+//        $data['trandingNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
+        $data['trandingNews'] = News::where('tranding', 0)->orderBy('view_count', 'DESC')->take(5)->get();
         $data['news']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
         $data['FeaturedNews']=News::take(5)->skip(0)->orderBy('id','DESC')->get();
         $data['latestNews']=News::take(4)->skip(6)->orderBy('id','DESC')->get();
@@ -27,8 +30,7 @@ class FontendControllers extends Controller
     public function webcategory($cateId){
         $category = categoryModel::find($cateId);
         $data['category'] = $category;
-        $data['comments'] = Comment::where('title', $cateId)->orderBy('id', 'DESC')->take(5)->get();
-        $data['news'] = News::with('author:name,id')->where('category_id', $cateId)->paginate(10);
+        $data['news'] = News::with('author:name,id')->where('category_id', $cateId)->paginate(3);
         $data['categories'] = categoryModel::all();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
 
@@ -41,7 +43,8 @@ class FontendControllers extends Controller
     {
         $data['news'] = News::with('author:name,id', 'category:categrory_name,id')->where('id', $newsId)->first();
         $data['view_count']=News::find($newsId)->increment('view_count');
-
+        $data['trandingNews'] = News::where('tranding', 0)->orderBy('view_count', 'DESC')->take(4)->get();
+        $data['tags']=News::orderBy('id','DESC')->get();
         $data['comments'] = Comment::where('title', $newsId)->orderBy('id', 'DESC')->take(5)->get();
         $data['categories'] = categoryModel::all();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
@@ -49,7 +52,6 @@ class FontendControllers extends Controller
 
         return view('fontend.news_details', $data);
     }
-
 
 
 }

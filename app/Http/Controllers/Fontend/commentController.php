@@ -21,11 +21,11 @@ class commentController extends Controller
     }
     public function index(){
         $data['url'] = \request()->input('url');
-        return view('auth.visitor_login');
+        return view('auth.visitor_login', $data);
     }
     public function create(){
         $data['url'] = \request()->input('url');
-        return view('auth.visitor_registration');
+        return view('auth.visitor_registration', $data);
 
     }
 

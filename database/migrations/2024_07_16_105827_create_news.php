@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('details');
             $table->integer('status')->default(1);
             $table->integer('view')->default(0);
+            $table->integer('tranding')->default(0);
             $table->integer('view_count')->default(0);
             $table->timestamps();
         });

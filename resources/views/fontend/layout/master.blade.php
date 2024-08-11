@@ -51,7 +51,51 @@
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('share-facebook').addEventListener('click', function() {
+            sharePost('facebook');
+        });
 
+        document.getElementById('share-linkedin').addEventListener('click', function() {
+            sharePost('linkedin');
+        });
+
+        document.getElementById('share-instagram').addEventListener('click', function() {
+            sharePost('instagram');
+        });
+
+        document.getElementById('share-youtube').addEventListener('click', function() {
+            sharePost('youtube');
+        });
+    });
+
+    function sharePost(platform) {
+        const postUrl = encodeURIComponent(window.location.href);
+        const postTitle = encodeURIComponent(document.title);
+
+        let shareUrl = '';
+
+        switch(platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer.php?u=${postUrl}&t=${postTitle}`;
+                break;
+            case 'linkedin':
+                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${postTitle}`;
+                break;
+            case 'instagram':
+                alert("Instagram does not support direct sharing via URL.");
+                return;
+            case 'youtube':
+                shareUrl = `https://www.youtube.com/share?url=${postUrl}&title=${postTitle}`;
+                return;
+            default:
+                return;
+        }
+
+        window.open(shareUrl, 'Share Post', 'width=600,height=400');
+    }
+</script>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

@@ -39,13 +39,7 @@ Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->n
 
 
 //fontend
-    Route::get('/homepage',[App\Http\Controllers\FontendControllers::class,'index']);
-    Route::get('/categories/{category_id}',[App\Http\Controllers\FontendControllers::class,'webcategory'])->name('wb.cat');
-    Route::get('/new/{news_id}',[App\Http\Controllers\FontendControllers::class,'newsDetails'])->name('wb.news');
-    Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'webcontact']);
-    Route::resource('comment',App\Http\Controllers\Fontend\commentController::class);
-    Route::resource('visitor_login',App\Http\Controllers\Fontend\VisitorLoginController::class);
-    Route::post('/visitor_do_login', [\App\Http\Controllers\Fontend\VisitorLoginController::class, 'visitor_do_login'])->name('visitor_do_login');
+
 
 
 //dasbord
@@ -65,3 +59,11 @@ Route::resource('news',App\Http\Controllers\NewsControllers::class);
 
 });
 
+Route::get('/homepage',[App\Http\Controllers\FontendControllers::class,'index']);
+Route::get('/categories/{category_id}',[App\Http\Controllers\FontendControllers::class,'webcategory'])->name('wb.cat');
+Route::get('/new/{news_id}',[App\Http\Controllers\FontendControllers::class,'newsDetails'])->name('wb.news');
+Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'webcontact']);
+Route::resource('comment',App\Http\Controllers\Fontend\commentController::class);
+Route::resource('visitor_login',App\Http\Controllers\Fontend\VisitorLoginController::class);
+
+Route::post('/visitor_do_login', [\App\Http\Controllers\Fontend\VisitorLoginController::class, 'visitor_do_login'])->name('visitor_do_login');

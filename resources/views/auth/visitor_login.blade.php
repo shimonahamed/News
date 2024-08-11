@@ -29,6 +29,7 @@
                 {{csrf_field()}}
 
 
+
                 <input type="hidden" name="back_url" value="{{isset($url) ? $url : ''}}">
 
                 <div class="input-group mb-3">
