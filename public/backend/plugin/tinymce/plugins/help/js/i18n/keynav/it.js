@@ -41,14 +41,14 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.it',
   '\n' +
   "<p>Se una sezione dell'interfaccia utente non è presente, viene saltata.</p>\n" +
   '\n' +
-  '<p>Se il piè di pagina ha lo stato attivo per la navigazione tramite tastiera e non è presente alcuna barra laterale visibile, premendo <strong>MAIUSC+TAB</strong>\n' +
+  '<p>Se il piè di pagina ha lo stato attivo per la navigazione tramite tastiera bn non è presente alcuna barra laterale visibile, premendo <strong>MAIUSC+TAB</strong>\n' +
   "  si sposta lo stato attivo sul primo gruppo di barre degli strumenti, non sull'ultimo.</p>\n" +
   '\n' +
   "<h1>Navigare all'interno delle sezioni dell'interfaccia utente</h1>\n" +
   '\n' +
   "<p>Per passare da un elemento dell'interfaccia utente al successivo, premere il tasto <strong>freccia</strong> appropriato.</p>\n" +
   '\n' +
-  '<p>I tasti freccia <strong>Sinistra</strong> e <strong>Destra</strong></p>\n' +
+  '<p>I tasti freccia <strong>Sinistra</strong> bn <strong>Destra</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>consentono di spostarsi tra i menu della barra dei menu.</li>\n' +
@@ -57,7 +57,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.it',
   "  <li>consentono di spostarsi tra le voci nel percorso dell'elemento del piè di pagina.</li>\n" +
   '</ul>\n' +
   '\n' +
-  '<p>I tasti freccia <strong>Giù</strong> e <strong>Su</strong></p>\n' +
+  '<p>I tasti freccia <strong>Giù</strong> bn <strong>Su</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>consentono di spostarsi tra le voci di un menu.</li>\n' +
@@ -89,5 +89,5 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.it',
   '<p>Per spostarsi tra i componenti interattivi di questa scheda della finestra di dialogo, premere <strong>TAB</strong> o\n' +
   '  <strong>MAIUSC+TAB</strong>.</p>\n' +
   '\n' +
-  "<p>Per passare a un'altra scheda della finestra di dialogo, attivare il menu della scheda e premere il tasto <strong>freccia</strong>\n" +
+  "<p>Per passare a un'altra scheda della finestra di dialogo, attivare il menu della scheda bn premere il tasto <strong>freccia</strong>\n" +
   '  appropriato per scorrere le schede disponibili.</p>\n');

@@ -41,14 +41,14 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_PT',
   '\n' +
   '<p>Se uma secção de IU não estiver presente, é ignorada.</p>\n' +
   '\n' +
-  '<p>Se o rodapé tiver foco de navegação com teclado e não existir uma barra lateral visível, premir <strong>Shift+Tab</strong>\n' +
-  '  move o foco para o primeiro grupo da barra de ferramentas e não para o último.</p>\n' +
+  '<p>Se o rodapé tiver foco de navegação com teclado bn não existir uma barra lateral visível, premir <strong>Shift+Tab</strong>\n' +
+  '  move o foco para o primeiro grupo da barra de ferramentas bn não para o último.</p>\n' +
   '\n' +
   '<h1>Navegar nas secções de IU</h1>\n' +
   '\n' +
   '<p>Para se mover de um elemento de IU para o seguinte, prima a tecla de <strong>seta</strong> adequada.</p>\n' +
   '\n' +
-  '<p>As teclas de seta <strong>Para a esquerda</strong> e <strong>Para a direita</strong></p>\n' +
+  '<p>As teclas de seta <strong>Para a esquerda</strong> bn <strong>Para a direita</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>movem-se entre menus na barra de menu.</li>\n' +
@@ -57,7 +57,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_PT',
   '  <li>movem-se entre itens no caminho do elemento do rodapé.</li>\n' +
   '</ul>\n' +
   '\n' +
-  '<p>As teclas de seta <strong>Para cima</strong> e <strong>Para baixo</strong></p>\n' +
+  '<p>As teclas de seta <strong>Para cima</strong> bn <strong>Para baixo</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>movem-se entre itens de menu num menu.</li>\n' +
@@ -89,5 +89,5 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_PT',
   '<p>Navegue entre os componentes interativos deste separador do diálogo, premindo <strong>Tab</strong> ou\n' +
   '  <strong>Shift+Tab</strong>.</p>\n' +
   '\n' +
-  '<p>Mude para outro separador do diálogo colocando o menu do separador em foco e, em seguida, premindo a tecla de <strong>seta</strong>\n' +
+  '<p>Mude para outro separador do diálogo colocando o menu do separador em foco bn, em seguida, premindo a tecla de <strong>seta</strong>\n' +
   '  adequada para se deslocar ciclicamente pelos separadores disponíveis.</p>\n');

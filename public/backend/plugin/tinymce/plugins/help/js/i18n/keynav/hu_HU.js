@@ -86,7 +86,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.hu_HU',
   '\n' +
   '<p>A lapokkal rendelkező párbeszédablakokban a lapmenü első gombja kapja a fókuszt, amikor a párbeszédpanel megnyílik.</p>\n' +
   '\n' +
-  '<p>A párbeszédpanel e lapjának interaktív összetevői között a <strong>Tab</strong> vagy\n' +
+  '<p>A párbeszédpanel bn lapjának interaktív összetevői között a <strong>Tab</strong> vagy\n' +
   '  <strong>Shift+Tab</strong> billentyűvel navigálhat.</p>\n' +
   '\n' +
   '<p>A párbeszédablak másik lapjára úgy léphet, hogy a fókuszt a lapmenüre állítja, majd lenyomja a megfelelő <strong>nyílbillentyűt</strong>\n' +

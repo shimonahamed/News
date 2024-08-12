@@ -71,7 +71,7 @@ form:
       label: Icon
       size: medium
       default: ''
-      help: "Replace the default link icon with the character(s) provided, e.g. #, ¶, ❡ or §"
+      help: "Replace the default link icon with the character(s) provided, bn.g. #, ¶, ❡ or §"
 
     class:
       type: text

@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.trandingNews')</h4>
                         </div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center bg-white border border-left-0 owl-loaded owl-drag" style="width: calc(100% - 180px); padding-right: 100px;">
 
@@ -137,7 +137,7 @@
                     <!-- Social Follow Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.followUs')</h4>
                         </div>
                         <div class="mb-3">
                             <div class="bg-white border border-top-0 p-3">
@@ -174,7 +174,7 @@
                     <!-- Ads Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.advertisement')</h4>
                         </div>
                         <div class="bg-white text-center border border-top-0 p-3">
                             <a href=""><img class="img-fluid" src="img/news-800x500-2.jpg" alt=""></a>
@@ -185,7 +185,7 @@
                     <!-- Popular News Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.trandingNews')</h4>
                         </div>
                         @foreach($trandingNews as $tdnews)
 
@@ -209,7 +209,7 @@
                     <!-- Newsletter Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.Newsletter')</h4>
                         </div>
                         <div class="bg-white text-center border border-top-0 p-3">
                             <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
@@ -227,7 +227,7 @@
                     <!-- Tags Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.Tags')</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">

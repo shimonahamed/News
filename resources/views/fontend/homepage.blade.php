@@ -11,10 +11,10 @@
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                               href="{{route('wb.cat',@$slide->category->id)}}">{{@$slide->category->categrory_name}}</a>
+                               href="{{route('wb.cat',@$slide->category->id)}}">{{ __('public.categor.'. strtolower($slide->category->categrory_name)) }}</a>
                             <a class="text-white" href="">{{date('M d, Y', strtotime($slide->date))}}</a>
                         </div>
-                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">{{$slide->title}}</a>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="{{route('wb.news', $slide->id)}}">{{$slide->title}}</a>
                     </div>
                 </div>
                     @endforeach
@@ -36,10 +36,10 @@
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                   href="{{route('wb.cat',@$new->category->id)}}">{{@$new->category->categrory_name}}</a>
+                                   href="{{route('wb.cat',@$new->category->id)}}">{{ __('public.categor.'. strtolower($new->category->categrory_name)) }}</a>
                                 <a class="text-white" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                             </div>
-                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{$new->title}}</a>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{route('wb.news', $new->id)}}">{{$new->title}}</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
         <div class="row align-items-center bg-dark">
             <div class="col-12">
                 <div class="d-flex justify-content-between">
-                    <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking News</div>
+                    <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">@lang('public.breakingNews')</div>
                     <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                          style="width: calc(100% - 170px); padding-right: 90px;">
                         <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div>
@@ -81,7 +81,7 @@
 <div class="container-fluid pt-5 mb-3">
     <div class="container">
         <div class="section-title">
-            <h4 class="m-0 text-uppercase font-weight-bold">Featured News</h4>
+            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.featuredNews')</h4>
         </div>
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
             @foreach($FeaturedNews as $fnews)
@@ -91,7 +91,7 @@
                 <div class="overlay">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                           href="{{route('wb.cat',@$fnews->category->id)}}">{{@$fnews->category->categrory_name}}</a>
+                           href="{{route('wb.cat',@$fnews->category->id)}}">{{ __('public.categor.'. strtolower($fnews->category->categrory_name)) }}</a>
                         <a class="text-white" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                     </div>
                     <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{route('wb.news', $fnews->id)}}">{{$new->title}}</a>
@@ -112,7 +112,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.latestNews')</h4>
                             <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                             <div class="bg-white border border-top-0 p-4">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                       href="{{route('wb.cat',@$latnews->category->id)}}">{{@$latnews->category->categrory_name}}</a>
+                                       href="{{route('wb.cat',@$latnews->category->id)}}">{{ __('public.categor.'. strtolower($latnews->category->categrory_name)) }}</a>
                                     <a class="text-body" href=""><small>{{date('M d, Y', strtotime($latnews->date))}}</small></a>
                                 </div>
                                 <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{route('wb.news', $latnews->id)}}">{{$latnews->title}}</a>
@@ -165,7 +165,7 @@
                                     <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                         <div class="mb-2">
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                               href="{{route('wb.cat',@$latnews->category->id)}}">{{@$latnews->category->categrory_name}}</a>
+                                               href="{{route('wb.cat',@$latnews->category->id)}}">{{ __('public.categor.'. strtolower($latnews->category->categrory_name)) }}</a>
 
                                             <a class="text-body" href=""><small>{{date('M d, Y', strtotime($latnews->date))}}</small></a>
                                         </div>
@@ -186,7 +186,7 @@
                                 <div class="mt-auto p-4">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                           href="{{route('wb.cat',@$ltnews->category->id)}}">{{@$ltnews->category->categrory_name}}</a>
+                                           href="{{route('wb.cat',@$ltnews->category->id)}}">{{ __('public.categor.'. strtolower($ltnews->category->categrory_name)) }}</a>
 
                                         <a class="text-body" href=""><small>{{date('M d, Y', strtotime($latnews->date))}}</small></a>
                                     </div>
@@ -220,7 +220,7 @@
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                       href="{{route('wb.cat',@$ltnew->category->id)}}">{{@$ltnew->category->categrory_name}}</a>
+                                       href="{{route('wb.cat',@$ltnew->category->id)}}">{{ __('public.categor.'. strtolower($ltnew->category->categrory_name)) }}</a>
 
                                     <a class="text-body" href=""><small>{{date('M d, Y', strtotime($ltnew->date))}}</small></a>
                                 </div>
@@ -237,7 +237,7 @@
             <div class="col-lg-4">
                 <!-- Social Follow Start -->
                 <div class="section-title mb-0">
-                    <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
+                    <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.followUs')</h4>
                 </div>
                 <div class="mb-3">
                     <div class="bg-white border border-top-0 p-3">
@@ -272,7 +272,7 @@
                 <!-- Ads Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.advertisement')</h4>
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
                         <a href=""><img class="img-src="{{asset('fontend/img/news-800x500-2.jpg')}}" alt=""></a>
@@ -283,7 +283,7 @@
                 <!-- Popular News Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.trandingNews')</h4>
                     </div>
                     @foreach($trandingNews as $news)
                     <div class="bg-white border border-top-0 p-3">
@@ -293,7 +293,7 @@
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                       href="{{route('wb.cat',@$news->category->id)}}">{{@$news->category->categrory_name}}</a>
+                                       href="{{route('wb.cat',@$news->category->id)}}">{{ __('public.categor.'. strtolower($news->category->categrory_name)) }}</a>
 
                                     <a class="text-body" href=""><small>{{date('M d, Y', strtotime($news->date))}}</small></a>
                                 </div>
@@ -309,7 +309,7 @@
                 <!-- Newsletter Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.Newsletter')</h4>
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
                         <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
@@ -328,12 +328,13 @@
                 <div class="mb-3">
                     <div class="section-title mb-0">
 
-                        <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.Tags')</h4>
                     </div>
                     <div class="bg-white border border-top-0 p-3">
                         <div class="d-flex flex-wrap m-n1">
                             @foreach($tags as $tag)
-                            <a href="{{route('wb.cat',@$tag->category->id)}}" class="btn btn-sm btn-outline-secondary m-1">{{@$tag->category->categrory_name}}</a>
+                            <a href="{{route('wb.cat',@$tag->category->id)}}" class="btn btn-sm btn-outline-secondary m-1">
+                                {{ __('public.categor.'. strtolower($tag->category->categrory_name)) }}</a>
                                 @endforeach
                         </div>
                     </div>

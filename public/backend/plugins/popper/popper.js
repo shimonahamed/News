@@ -1665,7 +1665,7 @@ function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
     let mergeWithPrevious = false;
     return op
     // This aggregates any `+` or `-` sign that aren't considered operators
-    // e.g.: 10 + +5 => [10, +, +5]
+    // bn.g.: 10 + +5 => [10, +, +5]
     .reduce((a, b) => {
       if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
         a[a.length - 1] = b;

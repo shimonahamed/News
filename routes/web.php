@@ -26,6 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/locale/{lange}',[App\Http\Controllers\localizationController::class,'setlang']);
+
+
 Route::get('/login',[App\Http\Controllers\loginControllars::class,'index'])->name('login');
 Route::post('/adlogin',[App\Http\Controllers\loginControllars::class,'adlogin'])->name('adlogin');
 

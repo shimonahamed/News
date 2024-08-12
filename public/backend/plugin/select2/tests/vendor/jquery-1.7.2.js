@@ -3193,7 +3193,7 @@ jQuery.event = {
 				old = cur;
 			}
 
-			// Only add window if we got to document (e.g., not plain obj or detached DOM)
+			// Only add window if we got to document (bn.g., not plain obj or detached DOM)
 			if ( old && old === elem.ownerDocument ) {
 				eventPath.push([ old.defaultView || old.parentWindow || window, bubbleType ]);
 			}
@@ -5231,18 +5231,18 @@ if ( document.querySelectorAll ) {
 (function(){
 	var div = document.createElement("div");
 
-	div.innerHTML = "<div class='test e'></div><div class='test'></div>";
+	div.innerHTML = "<div class='test bn'></div><div class='test'></div>";
 
 	// Opera can't find a second classname (in 9.6)
 	// Also, make sure that getElementsByClassName actually exists
-	if ( !div.getElementsByClassName || div.getElementsByClassName("e").length === 0 ) {
+	if ( !div.getElementsByClassName || div.getElementsByClassName("bn").length === 0 ) {
 		return;
 	}
 
 	// Safari caches class attributes, doesn't catch changes (in 3.2)
 	div.lastChild.className = "e";
 
-	if ( div.getElementsByClassName("e").length === 1 ) {
+	if ( div.getElementsByClassName("bn").length === 1 ) {
 		return;
 	}
 

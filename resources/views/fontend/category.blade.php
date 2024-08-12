@@ -36,10 +36,16 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="{{url('homepage')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url('homepage')}}" class="nav-item nav-link active">@lang('public.home')</a>
                     @foreach($categories as $category)
-                        <a href="{{ route('wb.cat', @$category->id) }}" class="nav-item nav-link">{{@$category->categrory_name }}</a>
+                        <a href="{{ route('wb.cat', @$category->id) }}" class="nav-item nav-link">
+                            {{__('public.categor.' . @$category->categrory_name )}}</a>
                     @endforeach
+{{--                    @foreach($categories as $category)--}}
+
+{{--                        <a href="{{ route('wb.cat', @$category->id) }}" class="nav-item nav-link">--}}
+{{--                            {{ __('public.categor.'. strtolower($category->categrory_name)) }}</a>--}}
+{{--                    @endforeach--}}
                 </div>
 
                 </div>
@@ -55,10 +61,17 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-12">
+
                             <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold">Category: Business</h4>
+                                @foreach($categoryName as $new)
+
+                                <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.category'): {{ __('public.categor.'. strtolower($new->category->categrory_name)) }}</h4>
                                 <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                                @endforeach
+
                             </div>
+
+
                         </div>
                         @foreach($news as $new)
                             <div class="col-lg-4">
@@ -66,7 +79,7 @@
                                     <img class="img-fluid w-100" src="{{env('STORAGE_PATH')}}/{{$new->img}}" style="object-fit: cover;">
                                     <div class="bg-white border border-top-0 p-4">
                                         <div class="mb-2">
-                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{@$new->category->categrory_name}}</a>
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{ __('public.categor.'. strtolower($new->category->categrory_name)) }}</a>
                                             <a class="text-body" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{route('wb.news', $new->id)}}">{{$new->title}}</a>

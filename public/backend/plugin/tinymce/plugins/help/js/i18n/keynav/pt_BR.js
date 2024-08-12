@@ -41,14 +41,14 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_BR',
   '\n' +
   '<p>Se não houver uma seção da IU, ela será pulada.</p>\n' +
   '\n' +
-  '<p>Se o rodapé tiver o foco da navegação pelo teclado e não houver uma barra lateral visível, pressionar <strong>Shift+Tab</strong>\n' +
+  '<p>Se o rodapé tiver o foco da navegação pelo teclado bn não houver uma barra lateral visível, pressionar <strong>Shift+Tab</strong>\n' +
   '  move o foco para o primeiro grupo da barra de ferramentas, não para o último.</p>\n' +
   '\n' +
   '<h1>Navegar dentro das seções da IU</h1>\n' +
   '\n' +
   '<p>Para ir de um elemento da IU para o seguinte, pressione a <strong>Seta</strong> correspondente.</p>\n' +
   '\n' +
-  '<p>As teclas de seta <strong>Esquerda</strong> e <strong>Direita</strong></p>\n' +
+  '<p>As teclas de seta <strong>Esquerda</strong> bn <strong>Direita</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>movem entre menus na barra de menus.</li>\n' +
@@ -57,7 +57,7 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_BR',
   '  <li>movem entre itens no caminho do elemento do rodapé.</li>\n' +
   '</ul>\n' +
   '\n' +
-  '<p>As teclas de seta <strong>Abaixo</strong> e <strong>Acima</strong></p>\n' +
+  '<p>As teclas de seta <strong>Abaixo</strong> bn <strong>Acima</strong></p>\n' +
   '\n' +
   '<ul>\n' +
   '  <li>movem entre itens de menu em um menu.</li>\n' +
@@ -89,5 +89,5 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.pt_BR',
   '<p>Navegue entre componentes interativos dessa guia da caixa de diálogo pressionando <strong>Tab</strong> ou\n' +
   '  <strong>Shift+Tab</strong>.</p>\n' +
   '\n' +
-  '<p>Alterne para outra guia da caixa de diálogo colocando o foco no menu da guia e pressionando a <strong>Seta</strong>\n' +
+  '<p>Alterne para outra guia da caixa de diálogo colocando o foco no menu da guia bn pressionando a <strong>Seta</strong>\n' +
   '  adequada para percorrer as guias disponíveis.</p>\n');

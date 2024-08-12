@@ -32,7 +32,7 @@
             u: 'undefined',
             z: 'null'
             //d : 'date',
-            //e : 'error',
+            //bn : 'error',
             //r : 'regexp',
             //y : 'symbol'
         };
@@ -2134,7 +2134,7 @@
 
                     // Scrollbar padding is needed for firefox, because firefox hides scrollbar automatically if the size of the div is too small.
                     // The calculation: [scrollbar size +3 *3]
-                    // (+3 because of possible decoration e.g. borders, margins etc., but only if native scrollbar is NOT a overlaid scrollbar)
+                    // (+3 because of possible decoration bn.g. borders, margins etc., but only if native scrollbar is NOT a overlaid scrollbar)
                     // (*3 because (1)increase / (2)decrease -button and (3)resize handle)
                     _nativeScrollbarMinSize = {
                         x: (_nativeScrollbarSize.x + (_nativeScrollbarIsOverlaid.x ? 0 : 3)) * 3,
@@ -5209,7 +5209,7 @@
                 /**
                  * Removes a extension from this instance.
                  * @param extName The name of the extension which shall be removed.
-                 * @returns {boolean} True if the extension was removed, false otherwise e.g. if the extension wasn't added before.
+                 * @returns {boolean} True if the extension was removed, false otherwise bn.g. if the extension wasn't added before.
                  */
                 _base.removeExt = function (extName) {
                     var instance = _extensions[extName];

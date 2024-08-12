@@ -22,6 +22,7 @@ class FontendControllers extends Controller
         $data['latNews']=News::take(1)->skip(9)->orderBy('id','DESC')->get();
         $data['latNews2']=News::take(4)->skip(11)->orderBy('id','DESC')->get();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
+        $data['popularNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
         $data['categories'] = categoryModel::all();
 
         return view('fontend.homepage',$data);
@@ -31,8 +32,11 @@ class FontendControllers extends Controller
         $category = categoryModel::find($cateId);
         $data['category'] = $category;
         $data['news'] = News::with('author:name,id')->where('category_id', $cateId)->paginate(3);
+        $data['categoryName'] = News::with('author:name,id')->where('category_id', $cateId)->paginate(1);
         $data['categories'] = categoryModel::all();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
+        $data['popularNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
+
 
         return view('fontend.category', $data);
 
@@ -48,6 +52,8 @@ class FontendControllers extends Controller
         $data['comments'] = Comment::where('title', $newsId)->orderBy('id', 'DESC')->take(5)->get();
         $data['categories'] = categoryModel::all();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
+        $data['popularNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
+
 
 
         return view('fontend.news_details', $data);

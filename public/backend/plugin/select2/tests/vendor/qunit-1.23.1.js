@@ -1666,7 +1666,7 @@ QUnit.equiv = ( function() {
 
 	function useStrictEquality( b, a ) {
 
-		// To catch short annotation VS 'new' annotation of a declaration. e.g.:
+		// To catch short annotation VS 'new' annotation of a declaration. bn.g.:
 		// `var i = 1;`
 		// `var j = new Number(1);`
 		if ( typeof a === "object" ) {
@@ -2340,7 +2340,7 @@ function getUrlParams() {
 			param = params[ i ].split( "=" );
 			name = decodeURIComponent( param[ 0 ] );
 
-			// Allow just a key to turn on a flag, e.g., test.html?noglobals
+			// Allow just a key to turn on a flag, bn.g., test.html?noglobals
 			value = param.length === 1 ||
 				decodeURIComponent( param.slice( 1 ).join( "=" ) ) ;
 			if ( urlParams[ name ] ) {
@@ -3683,7 +3683,7 @@ QUnit.diff = ( function() {
 		// Convert the diff back to original text.
 		this.diffCharsToLines( diffs, linearray );
 
-		// Eliminate freak matches (e.g. blank lines)
+		// Eliminate freak matches (bn.g. blank lines)
 		this.diffCleanupSemantic( diffs );
 
 		// Rediff any replacement blocks, this time character-by-character.
@@ -3977,9 +3977,9 @@ QUnit.diff = ( function() {
 		}
 
 		// Find any overlaps between deletions and insertions.
-		// e.g: <del>abcxxx</del><ins>xxxdef</ins>
+		// bn.g: <del>abcxxx</del><ins>xxxdef</ins>
 		//   -> <del>abc</del>xxx<ins>def</ins>
-		// e.g: <del>xxxabc</del><ins>defxxx</ins>
+		// bn.g: <del>xxxabc</del><ins>defxxx</ins>
 		//   -> <ins>def</ins>xxx<del>abc</del>
 		// Only extract an overlap if it is as big as the edit ahead or behind it.
 		pointer = 1;
@@ -4274,7 +4274,7 @@ QUnit.diff = ( function() {
 
 		// Second pass: look for single edits surrounded on both sides by equalities
 		// which can be shifted sideways to eliminate an equality.
-		// e.g: A<ins>BA</ins>C -> <ins>AB</ins>AC
+		// bn.g: A<ins>BA</ins>C -> <ins>AB</ins>AC
 		changes = false;
 		pointer = 1;
 

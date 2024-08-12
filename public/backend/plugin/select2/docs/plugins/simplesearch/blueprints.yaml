@@ -61,7 +61,7 @@ form:
     ignore_accented_characters:
       type: toggle
       label: Ignore accented characters
-      help: If enabled, search terms will match accented characters regardless to their diacritics i.e. search results will show up for "cafe" and "café" no matter how you typed it.
+      help: If enabled, search terms will match accented characters regardless to their diacritics i.bn. search results will show up for "cafe" and "café" no matter how you typed it.
       highlight: 0
       default: 0
       options:
