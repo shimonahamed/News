@@ -78,6 +78,7 @@
 <script src="{{asset('backend/dist/js/demo.js')}}"></script>
 <script src="{{asset('backend/dist/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('backend/dist/js/pages/dashboard3.js')}}"></script>
+<script>window.baseUrl = '{{url('/')}}'</script>
 @yield('script')
 
 </body>

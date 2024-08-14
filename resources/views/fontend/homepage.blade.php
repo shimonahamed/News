@@ -94,7 +94,7 @@
                            href="{{route('wb.cat',@$fnews->category->id)}}">{{ __('public.categor.'. strtolower($fnews->category->categrory_name)) }}</a>
                         <a class="text-white" href=""><small>{{date('M d, Y', strtotime($new->date))}}</small></a>
                     </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{route('wb.news', $fnews->id)}}">{{$new->title}}</a>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{route('wb.news', $fnews->id)}}">{{$fnews->title}}</a>
                 </div>
             </div>
                 @endforeach
@@ -275,7 +275,7 @@
                         <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.advertisement')</h4>
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
-                        <a href=""><img class="img-src="{{asset('fontend/img/news-800x500-2.jpg')}}" alt=""></a>
+                        <a href=""><img class="img " src="{{asset('fontend/img/news-800x500-2.jpg')}}" alt=""></a>
                     </div>
                 </div>
                 <!-- Ads End -->
@@ -285,19 +285,19 @@
                     <div class="section-title mb-0">
                         <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.trandingNews')</h4>
                     </div>
-                    @foreach($trandingNews as $news)
+                    @foreach($trandingNews as $tradnews)
                     <div class="bg-white border border-top-0 p-3">
 
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                            <img class="img-fluid" style="height: 80px"  src="{{env('STORAGE_PATH')}}/{{$news->img}}" alt="">
+                            <img class="img-fluid" style="height: 80px"  src="{{env('STORAGE_PATH')}}/{{$tradnews->img}}" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                       href="{{route('wb.cat',@$news->category->id)}}">{{ __('public.categor.'. strtolower($news->category->categrory_name)) }}</a>
+                                       href="{{route('wb.cat',@$tradnews->category->id)}}">{{ __('public.categor.'. strtolower($tradnews->category->categrory_name)) }}</a>
 
-                                    <a class="text-body" href=""><small>{{date('M d, Y', strtotime($news->date))}}</small></a>
+                                    <a class="text-body" href=""><small>{{date('M d, Y', strtotime($tradnews->date))}}</small></a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{route('wb.news', $news->id)}}">{{$news->title}}</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{route('wb.news', $tradnews->id)}}">{{$tradnews->title}}</a>
                             </div>
                         </div>
                     </div>

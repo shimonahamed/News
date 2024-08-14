@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 class FontendControllers extends Controller
 {
     public function index(){
+
         $data['slider']=News::with('category:categrory_name,id')->take(3)->skip(0)->orderBy('id','DESC')->get();
         $data['tags']=News::orderBy('id','DESC')->get();
 //        $data['trandingNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
@@ -23,6 +24,7 @@ class FontendControllers extends Controller
         $data['latNews2']=News::take(4)->skip(11)->orderBy('id','DESC')->get();
         $data['flickrphotos']=News::take(12)->skip(0)->orderBy('id','DESC')->get();
         $data['popularNews']=News::take(4)->skip(0)->orderBy('id','DESC')->get();
+
         $data['categories'] = categoryModel::all();
 
         return view('fontend.homepage',$data);
@@ -45,6 +47,7 @@ class FontendControllers extends Controller
     }
     public function newsDetails($newsId)
     {
+
         $data['news'] = News::with('author:name,id', 'category:categrory_name,id')->where('id', $newsId)->first();
         $data['view_count']=News::find($newsId)->increment('view_count');
         $data['trandingNews'] = News::where('tranding', 0)->orderBy('view_count', 'DESC')->take(4)->get();

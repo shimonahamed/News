@@ -46,6 +46,7 @@ Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->n
 
 
 //dasbord
+Route::get('/admin_comment', [\App\Http\Controllers\Fontend\commentController::class, 'commentList'])->name('admin_comment');
 
 Route::get('/dashboard1',[App\Http\Controllers\DashboardControllers::class , 'dashboard1']);
 Route::get('/dashboardtwo',[App\Http\Controllers\DashboardControllers::class , 'dashboardtwo']);

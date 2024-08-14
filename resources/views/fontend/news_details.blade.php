@@ -48,7 +48,7 @@
                         <img class="img-fluid w-100" src="{{env('STORAGE_PATH')}}/{{$news->img}}"  style="object-fit: cover;">
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{@$news->category->categrory_name}}</a>
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">{{__('public.categor.'. $news->category->categrory_name)}}</a>
                                 <a class="text-body" href="">{{date('M d, Y', strtotime($news->date))}}</a>
                             </div>
                             <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{$news->title}}</h1>
@@ -195,7 +195,7 @@
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                           href="{{route('wb.cat',@$tdnews->category->id)}}">{{@$tdnews->category->categrory_name}}</a>
+                                           href="{{route('wb.cat',@$tdnews->category->id)}}">{{__('public.categor.'. $tdnews->category->categrory_name)}}</a>
                                         <a class="text-body" href=""><small>{{date('M d, Y', strtotime($tdnews->date))}}</small></a>
                                     </div>
                                     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{route('wb.news', $tdnews->id)}}">{{$tdnews->title}}</a>
@@ -233,7 +233,7 @@
                             <div class="d-flex flex-wrap m-n1">
 
                                 @foreach($tags as $tag)
-                                    <a href="{{route('wb.cat',@$tag->category->id)}}" class="btn btn-sm btn-outline-secondary m-1">{{@$tag->category->categrory_name}}</a>
+                                    <a href="{{route('wb.cat',@$tag->category->id)}}" class="btn btn-sm btn-outline-secondary m-1">{{__('public.categor.'. $tag->category->categrory_name)}}</a>
                                 @endforeach
                             </div>
                         </div>
