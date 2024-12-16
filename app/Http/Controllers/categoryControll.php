@@ -7,31 +7,33 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use function Nette\Utils\data;
 
 class categoryControll extends Controller
 {
+    public function index(){
+        return view('fontend.category');
+    }
     public function addCategory()
     {
         return view('backend.category.addCategory');
     }
-    public function categoryList(){
-        $data['categories'] = DB::table('categories')->get();
-        return view('backend.category.categoryList',$data);
-
+    public function categoryList()
+    {
+        $data['categories'] = categoryModel::all();
+        return view('backend.category.categoryList', $data);
     }
+
 
     public function saveCat(Request $request){
         $this->validate($request,[
             'category_name'=>'required',
-//            'img'=>'required',
-//            'details'=>'required',
+
         ]);
 
         $category = new categoryModel();
         $category->categrory_name = $request->category_name ;
-//        $category->img = $request->img ;
-//
-//        $category->details = $request->details ;
+
         $category->status = 1 ;
 
         $category->save();
@@ -41,30 +43,21 @@ class categoryControll extends Controller
     }
 
 
-    public function eidt($id){
-        // Retrieve category by id
+    public function edit($id){
         $data = categoryModel::where('id',$id)->first();
-
-        // Pass category data to the view
         return view('backend.category.eidtCategory', $data);
     }
 
     public function update(Request $request ){
-
-        // Validate incoming request data
         $request->validate([
-            'id' => 'required', // Ensure id exists in category_models table
+            'id' => 'required',
             'category_name' => 'required',
-//            'img' => 'required',
-//            'details' => 'required',
         ]);
 
-        // Retrieve category by id
         $id = $request->input('id');
         $category = categoryModel::find($id);
 
         if ($category){
-            // Update category attributes
             $category->categrory_name = $request->input('category_name');
 //            $category->img = $request->input('img');
 //            $category->details = $request->input('details');

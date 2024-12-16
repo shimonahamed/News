@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('comments_data',[commentController::class, 'getcomment']);
 Route::post('comments_data/delete',[commentController::class, 'commentDelete']);
 
+Route::resource('category_api',\App\Http\Controllers\Backend\categoryApiController::class);
+
+

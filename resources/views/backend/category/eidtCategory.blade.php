@@ -38,7 +38,9 @@
 {{--                </div>--}}
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Submit</button>
+                    <a href="{{url('categoryList')}}" class="btn btn-success">Back</a>
                 </div>
+            </form>
             </form>
         </div>
     </div>

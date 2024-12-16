@@ -296,6 +296,15 @@
 
                     </ul>
                 </li>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin_comment')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Comment List</p>
+                        </a>
+                    </li>
+
+                </ul>
                 <li class="nav-header">EXAMPLES</li>
                 <li class="nav-item">
                     <a href="pages/calendar.html" class="nav-link">
@@ -427,6 +436,13 @@
                     <a href="{{route('logout')}}" class="nav-link">
                         <img src="{{asset('backend/img/logout.png')}}">
                             Logout
+                    </a>
+
+{{--                    end Extras--}}
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin_comment')}}" class="nav-link">
+                            comment List
                     </a>
 
 {{--                    end Extras--}}

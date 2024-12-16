@@ -275,7 +275,7 @@
                         <h4 class="m-0 text-uppercase font-weight-bold">@lang('public.advertisement')</h4>
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
-                        <a href=""><img class="img " src="{{asset('fontend/img/news-800x500-2.jpg')}}" alt=""></a>
+                        <a href=""><img class="img " src="{{asset('fontendimg/news-800x500-2.jpg')}}" alt=""></a>
                     </div>
                 </div>
                 <!-- Ads End -->
@@ -332,9 +332,9 @@
                     </div>
                     <div class="bg-white border border-top-0 p-3">
                         <div class="d-flex flex-wrap m-n1">
-                            @foreach($tags as $tag)
-                            <a href="{{route('wb.cat',@$tag->category->id)}}" class="btn btn-sm btn-outline-secondary m-1">
-                                {{ __('public.categor.'. strtolower($tag->category->categrory_name)) }}</a>
+                            @foreach($categories as $tag)
+                            <a href="{{route('wb.cat',@$tag->id)}}" class="btn btn-sm btn-outline-secondary m-1">
+                                {{ __('public.categor.'. strtolower($tag->categrory_name)) }}</a>
                                 @endforeach
                         </div>
                     </div>

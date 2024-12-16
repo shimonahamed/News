@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/logout',[App\Http\Controllers\loginControllars::class,'logout'])->name('logout');
-    Route::get('/', [\App\Http\Controllers\DashboardControllers::class, 'dashboard'])->name('/');
+    Route::get('/admin/dashboard', [\App\Http\Controllers\DashboardControllers::class, 'dashboard'])->name('/');
 
 
 //fontend
@@ -50,11 +50,10 @@ Route::get('/admin_comment', [\App\Http\Controllers\Fontend\commentController::c
 
 Route::get('/dashboard1',[App\Http\Controllers\DashboardControllers::class , 'dashboard1']);
 Route::get('/dashboardtwo',[App\Http\Controllers\DashboardControllers::class , 'dashboardtwo']);
-
 Route::get('/addCategory',[App\Http\Controllers\categoryControll::class,'addCategory']);
 Route::get('/categoryList', [\App\Http\Controllers\categoryControll::class, 'categoryList']);
 Route::post('/saveCat', [\App\Http\Controllers\categoryControll::class, 'saveCat']);
-Route::get('/categroy/eidt/{id}', [\App\Http\Controllers\categoryControll::class, 'eidt']);
+Route::get('/categroy/eidt/{id}', [\App\Http\Controllers\categoryControll::class, 'edit']);
 Route::post('/update', [\App\Http\Controllers\categoryControll::class, 'update']);
 Route::get('/delete/{id}', [\App\Http\Controllers\categoryControll::class, 'delete']);
 Route::get('/eidt', [\App\Http\Controllers\NewsControllers::class, 'eidt']);
@@ -63,7 +62,8 @@ Route::resource('news',App\Http\Controllers\NewsControllers::class);
 
 });
 
-Route::get('/homepage',[App\Http\Controllers\FontendControllers::class,'index']);
+Route::get('/',[App\Http\Controllers\FontendControllers::class,'index']);
+Route::get('/category',[App\Http\Controllers\FontendControllers::class,'index']);
 Route::get('/categories/{category_id}',[App\Http\Controllers\FontendControllers::class,'webcategory'])->name('wb.cat');
 Route::get('/new/{news_id}',[App\Http\Controllers\FontendControllers::class,'newsDetails'])->name('wb.news');
 Route::get('/contact',[App\Http\Controllers\FontendControllers::class,'webcontact']);

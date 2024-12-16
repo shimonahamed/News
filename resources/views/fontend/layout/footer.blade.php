@@ -43,7 +43,7 @@
             <div class="row">
                 @foreach($flickrphotos as $photos)
                 <div class="col-4 mb-3">
-                    <a href="{{route('wb.cat',@$photos->category->id)}}"><img class="w-100" src="{{env('STORAGE_PATH')}}/{{$photos->img}}" alt=""></a>
+                    <a href="{{route('wb.cat',@$photos->category->id)}}"><img style="width: 70px;height: 50px;" src="{{env('STORAGE_PATH')}}/{{$photos->img}}" alt=""></a>
                 </div>
                 @endforeach
             </div>

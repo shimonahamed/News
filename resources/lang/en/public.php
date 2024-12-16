@@ -18,6 +18,7 @@ return[
     'flickrPhotos'=>'Flickr Photos ',
 
     'categor'=>[
+        'ব্যবসা'=>'Business',
         'অপরাধ'=>'Crime',
         'খেলা'=>'Game',
         'বিশ্ব'=>'The World',

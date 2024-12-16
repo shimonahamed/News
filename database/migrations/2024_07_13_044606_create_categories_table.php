@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('categrory_name');
             $table->string('details')->nullable();
-            $table->text('img');
             $table->integer('status')->default();
             $table->timestamps();
         });

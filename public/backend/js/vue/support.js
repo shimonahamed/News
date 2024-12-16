@@ -1,3 +1,5 @@
+
+
 function showToast(message = '', position = 'top-right'){
     $.toast({
         text : message,
